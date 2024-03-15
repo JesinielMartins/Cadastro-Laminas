@@ -1,14 +1,13 @@
 <?php
-
 namespace Cadastro;
 
-use Laminas\ServiceManager\Factory\InvokableFactory;
+//use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return[
     'router' => [
         'routes' => [
             'cadastro' =>[
-                'type' => \Laminas\Router\Http\Segment ::class,
+                'type' => \Laminas\Router\Http\Segment::class,
                 'options' => [
                     'route' => '/cadastro[/:action[/:id]]',
                     'constraints' => [
@@ -16,7 +15,7 @@ return[
                         'id' => '[0-9]+'
                     ],
                     'defaults'=> [
-                        'controller' => Controller\CadastroController ::class,
+                        'controller' => Controller\CadastroController::class,
                         'action' => 'index',
                     ],
                 ],
@@ -25,7 +24,7 @@ return[
     ],
     'controllers' => [
         'factories' => [
-            Controller\CadastroController ::class => InvokableFactory ::class,
+          //  Controller\CadastroController ::class => InvokableFactory ::class,
         ],
     ],
     'view_manager' => [
@@ -33,5 +32,12 @@ return[
             'cadastro' => __DIR__ . '/../view',
             'adicionar' => __DIR__ . '/../view'
         ],
+    ],
+    'db'=> [
+        'driver'=>'PDO_pgsql',
+        'database'=>'cadastroDb',
+        'username'=> 'postgres',
+        'password'=> 'jota123',
+        'hostname'=> 'localhost'
     ],
 ];

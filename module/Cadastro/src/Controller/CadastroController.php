@@ -1,17 +1,16 @@
 <?php
-
 namespace Cadastro\Controller;
 
 use Cadastro\Model\CadastroTable;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\ViewModel;
-use Model\CadastroTable
 
-class CadastroController extends AbstractActionController{
+class CadastroController extends AbstractActionController {
+   
     private $table;
 
-    public function __construct() {
-        $this->table = new CadastroTable();
+    public function __construct(CadastroTable $table) {
+        $this->table = $table;
     }
     
     public function indexAction() {
@@ -35,14 +34,14 @@ class CadastroController extends AbstractActionController{
     public function confirmacaoAction (){
         return new ViewModel();
     }
-}
+};
 
 /*Essas funçoes que fazem parte da class CadastroController, tem o papel de executar ações dentro da página. elas alteram a URL para 
 cada url seguirá desse modo:
-/pessoa => index
-/pessoa/adicionar => adicionarAction
-/pessoa/salvar => salvarAction
-/pessoa/editar => editarAction
-/pessoa/confirmacao => confirmacaoAction
-/pessoa/remover => recomerAction
+/cadastro => index
+/cadastro/adicionar => adicionarAction
+/cadastro/salvar => salvarAction
+/cadastro/editar => editarAction
+/cadastro/confirmacao => confirmacaoAction
+/cadastro/remover => recomerAction
 */
