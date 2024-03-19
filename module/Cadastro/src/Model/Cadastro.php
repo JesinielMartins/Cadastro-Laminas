@@ -6,7 +6,7 @@ namespace Cadastro\Model;
     private $sobrenome;
     private $nome;
     private $email;
-    private  $situacao;
+    private $situacao;
 
     public function exchangeArray(array $data) {
         $this->id = !empty($data['id']) ? $data['id'] : null;
@@ -18,33 +18,33 @@ namespace Cadastro\Model;
     public function getId () {
         return $this->id;
         }
-    public function setId () {
+    public function setId ($id) {
           return  $this->id = $id;
         }
     public function getNome() {
         return $this->nome;
     }
-    public function setNome() {
-        return $this->nome= $nome;
+    public function setNome($nome) {
+        return $this->nome = $nome;
 
     }
     public function getSobrenome() {
         return $this->sobrenome;
     }
-    public  function setSobrenome() {
-        return $this-> sobrenome= $sobrenome;
+    public  function setSobrenome($sobrenome) {
+        return $this-> sobrenome = $sobrenome;
     }
     public  function getEmail () {
         return $this-> email;
     }
-    public function setEmail(){
-        return $this-> email= $email
+    public function setEmail($email){
+        return $this-> email = $email;
     }
     public function getSituacao (){
         return $this->situacao;
         
     }
-    public function setSituacao() {
+    public function setSituacao($situacao) {
         return $this->situacao = $situacao;
     }
 

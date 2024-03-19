@@ -1,7 +1,7 @@
 <?php
 namespace Cadastro;
 
-//use Laminas\ServiceManager\Factory\InvokableFactory;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return[
     'router' => [
@@ -24,7 +24,7 @@ return[
     ],
     'controllers' => [
         'factories' => [
-          //  Controller\CadastroController ::class => InvokableFactory ::class,
+            Controller\CadastroController ::class => InvokableFactory ::class,
         ],
     ],
     'view_manager' => [
@@ -34,10 +34,10 @@ return[
         ],
     ],
     'db'=> [
-        'driver'=>'PDO_pgsql',
-        'database'=>'cadastroDb',
+        'driver'=>'Pdo_Pgsql',
+        'database'=>'Cadastro',
         'username'=> 'postgres',
-        'password'=> 'jota123',
+        'password'=> 'jotajota',
         'hostname'=> 'localhost'
     ],
 ];

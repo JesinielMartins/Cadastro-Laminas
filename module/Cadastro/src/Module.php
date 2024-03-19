@@ -17,12 +17,12 @@ class Module implements ConfigProviderInterface {
         return [
             'factories' => [
                 Model\CadastroTable::class => function($container) {
-                    $tableGateway = $container->get(Model\CadastroTableGateway::class);
+                    $tableGateway = $container->get(Model\CadastroTable::class);
                     return new Model\CadastroTable($tableGateway);
                             
                 },
 
-                Model\CadastroTableGateway::class => function($container) {
+                Model\CadastroTable::class => function($container) {
                     $dbAdapter = $container->get(AdapterInterface::class);
                     $resultSetPrototype = new ResultSet();
                     $resultSetPrototype-> setArrayObjectPrototype(new Model\Cadastro());
